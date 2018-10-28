@@ -1,6 +1,6 @@
 FROM debian
 
-ENV LJHOME=/work/learnng-journey
+ENV LJHOME=/work/learning-journey
 
 RUN mkdir /work && cd /work \
     && apt-get update -y \
@@ -17,9 +17,11 @@ RUN mkdir /work && cd /work \
     && make && make install \
     && cd /work \
     && git clone https://github.com/Intensivate/learning-journey.git \
+    && cd ${LJHOME} \
+    && echo exit | sbt \
     && echo "Finished"
 
 WORKDIR /work/learning-journey
-CMD [ "bash " ]
+CMD [ "bash" ]
 
 
