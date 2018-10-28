@@ -1,2 +1,2 @@
-# mpsejl-Chisel
+# Chisel
 Run Chisel in Docker
