@@ -16,7 +16,6 @@ RUN mkdir /work && cd /work \
     && autoconf && ./configure \
     && make && make install \
     && cd /work \
-    && git clone https://github.com/ucb-bar/riscv-sodor.git \
     && git clone https://github.com/Intensivate/learning-journey.git \
     && cd ${LJHOME} \
     && echo exit | sbt \

@@ -1,0 +1,18 @@
+FROM mpsej0/chisel
+
+ENV VERILATOR_ROOT=/work/verilator
+
+RUN cd /work \
+    #&& git clone https://github.com/ucb-bar/riscv-sodor.git \
+    && cd riscv-sodor \
+    && git submodule update --init --recursive \
+    && cd /work/riscv-sodor/riscv-fesvr \
+    && mkdir build; cd build \
+    && ../configure --prefix=/usr/local \
+    && make install \
+    && cd /work/riscv-sodor \
+    && ./configure --with-riscv=/usr/local --with-chisel=$LJHOME \
+    && make \
+    && make run-emulator \
+    && make install \
+    && make clean
