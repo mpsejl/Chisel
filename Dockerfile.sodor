@@ -3,7 +3,7 @@ FROM mpsej0/chisel
 ENV VERILATOR_ROOT=/work/verilator
 
 RUN cd /work \
-    #&& git clone https://github.com/ucb-bar/riscv-sodor.git \
+    && git clone https://github.com/ucb-bar/riscv-sodor.git \
     && cd riscv-sodor \
     && git submodule update --init --recursive \
     && cd /work/riscv-sodor/riscv-fesvr \
