@@ -4,7 +4,7 @@ ENV LJHOME=/work/learning-journey
 
 RUN mkdir /work && cd /work \
     && apt-get update -y \
-    && apt-get install -y git make autoconf g++ flex bison gnupg apt-transport-https wget \
+    && apt-get install -y git make autoconf g++ flex bison gnupg apt-transport-https wget vim \
     && apt-get install -y default-jdk \
     && echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list \
     && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823 \
